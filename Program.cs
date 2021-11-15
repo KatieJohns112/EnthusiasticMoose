@@ -1,7 +1,10 @@
-﻿using System;
+﻿// program.cs is like your main.js in JavaScript
+// void means your just pringting things to the terminal
+using System;
 
 Main();
 void Main()
+// 
 {
 
     Console.WriteLine("Welcome to the Enthusiastic Moose Simulator!");
@@ -92,7 +95,7 @@ void Main()
         }
     }
     void MooseSays(string message)
-    // string message refers to "MooseSays" on lines 29 and 30
+    // string message refers to "MooseSays" 
     {
         Console.WriteLine($@"
                                        _.--^^^--,
