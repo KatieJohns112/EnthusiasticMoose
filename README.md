@@ -1,3 +1,3 @@
 # EnthusiasticMoose
 
-## Interactive exercise using C#. Translating javascript to C#.
+### Interactive exercise using C#. Translating javascript to C#.
