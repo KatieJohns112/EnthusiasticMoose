@@ -6,14 +6,14 @@ Main();
 void Main()
 // 
 {
-
     Console.WriteLine("Welcome to the Enthusiastic Moose Simulator!");
     Console.WriteLine("--------------------------------------------");
     Console.WriteLine();
-    CanadaQuestion();
-    EnthusiasticQuestion();
-    LoveCSharpQuestion();
-    SecretQuestion();
+    // we take all the positive, negative and questions and call all of the MooseQuestions. This cleans up the code and calls all of the answers and questions in the same place.
+    MooseQuestions("Is Canada real?", "Really? It seems very unlikely.", "I  K N E W  I T !!!");
+    MooseQuestions("Are you enthusiastic?", "Yay!", "You should try it!");
+    MooseQuestions("Do you love C# yet?", "Good job sucking up to your instructor!", "You will...oh, yes, you will...");
+    MooseQuestions("Do you want to know a secret?", "ME TOO!!!! I love secrets...tell me one!", "Oh, no...secrets are the best, I love to share them!");
     bool MooseAsks(string question)
     // this string asks a question instead of presenting a message
     {
@@ -40,64 +40,25 @@ void Main()
     MooseSays("H I, I'M  E N T H U S I A S T I C !");
     MooseSays("I really am enthusiastic");
 
-    CanadaQuestion();
-
-    void CanadaQuestion()
+    // define the type if variable "string" : you will need a question, positive answer and negative answer
+    void MooseQuestions(string question, string positive, string negative)
     {
-        bool isTrue = MooseAsks("Is Canada real?");
-        if (isTrue)
+        bool response = MooseAsks(question);
+        if (response)
         {
-            MooseSays("Really? It seems very unlikely.");
+            MooseSays(positive);
         }
         else
         {
-            MooseSays("I  K N E W  I T !!!");
+            MooseSays(negative);
         }
     }
+}
 
-
-    void EnthusiasticQuestion()
-    {
-        bool isEnthusiastic = MooseAsks("Are you enthusiastic?");
-        if (isEnthusiastic)
-        {
-            MooseSays("Yay!");
-        }
-        else
-        {
-            MooseSays("You should try it!");
-        }
-    }
-
-    void LoveCSharpQuestion()
-    {
-        bool doesLoveCSharp = MooseAsks("Do you love C# yet?");
-        if (doesLoveCSharp)
-        {
-            MooseSays("Good job sucking up to your instructor!");
-        }
-        else
-        {
-            MooseSays("You will...oh, yes, you will...");
-        }
-    }
-
-    void SecretQuestion()
-    {
-        bool wantsSecret = MooseAsks("Do you want to know a secret?");
-        if (wantsSecret)
-        {
-            MooseSays("ME TOO!!!! I love secrets...tell me one!");
-        }
-        else
-        {
-            MooseSays("Oh, no...secrets are the best, I love to share them!");
-        }
-    }
-    void MooseSays(string message)
-    // string message refers to "MooseSays" 
-    {
-        Console.WriteLine($@"
+void MooseSays(string message)
+// string message refers to "MooseSays" 
+{
+    Console.WriteLine($@"
                                        _.--^^^--,
                                     .'          `\
   .-^^^^^^-.                      .'              |
@@ -125,5 +86,4 @@ void Main()
                       \ \'._  ` '_.'
                        `^^` `^^^`
     ");
-    }
 }
